@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Recebidos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="form.html">Formulário</a></li>
+                <li><a href="formAction.html">Receber Dados</a></li>
+                <li><a href="about.html">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Dados Recebidos</h1>
+        <p id="dados"></p>
+    </main>
+    <script src="js/script.js"></script>
+    <script>
+        function capturarDados() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const nome = urlParams.get("nome");
+            const email = urlParams.get("email");
+            const telefone = urlParams.get("telefone");
+
+            document.getElementById("dados").textContent = 
+                `Nome: ${nome}, Email: ${email}, Telefone: ${telefone}`;
+        }
+        capturarDados();
+    </script>
+</body>
+</html>
